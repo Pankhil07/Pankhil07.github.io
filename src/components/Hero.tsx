@@ -23,27 +23,27 @@ const Hero = () => {
             </span>
           </div>
           
-          {/* Profile Photo */}
-          <div className="mb-8 animate-fade-up flex justify-center" style={{
+          {/* Profile Photo and Name */}
+          <div className="mb-8 animate-fade-up flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8" style={{
           animationDelay: "0.15s"
         }}>
-            <div className="relative">
+            <div className="relative flex-shrink-0">
               <div className="absolute inset-0 bg-accent-cyber/30 rounded-full blur-xl animate-pulse-slow"></div>
-              <Avatar className="h-32 w-32 md:h-40 md:w-40 border-4 border-accent-cyber/50 shadow-[0_0_30px_hsl(160_100%_50%/0.3)] hover:shadow-[0_0_40px_hsl(160_100%_50%/0.5)] transition-all duration-300">
+              <Avatar className="h-24 w-24 md:h-32 md:w-32 border-4 border-accent-cyber/50 shadow-[0_0_30px_hsl(160_100%_50%/0.3)] hover:shadow-[0_0_40px_hsl(160_100%_50%/0.5)] transition-all duration-300">
                 <AvatarImage src="/pg.jpg" alt="Pankhil Gawade" className="object-cover" />
                 <AvatarFallback className="bg-accent-cyber/20 text-accent-cyber text-2xl font-bold">
                   PG
                 </AvatarFallback>
               </Avatar>
             </div>
+            
+            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-foreground animate-fade-up" style={{
+            animationDelay: "0.2s"
+          }}>
+              <span className="text-muted-foreground font-mono text-xl md:text-2xl lg:text-3xl block mb-2">{"// Hello, I'm"}</span>
+              <span className="gradient-text animate-glow font-light">Pankhil Gawade</span>
+            </h1>
           </div>
-          
-          <h1 className="font-display text-5xl md:text-7xl font-bold text-foreground mb-6 animate-fade-up" style={{
-          animationDelay: "0.2s"
-        }}>
-            <span className="text-muted-foreground font-mono text-2xl md:text-3xl block mb-2">{"// Hello, I'm"}</span>
-            <span className="gradient-text animate-glow font-light">Pankhil Gawade</span>
-          </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed animate-fade-up font-mono" style={{
           animationDelay: "0.3s"
