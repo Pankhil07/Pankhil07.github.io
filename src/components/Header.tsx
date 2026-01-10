@@ -14,9 +14,6 @@ const Header = () => {
         </button>
         
         <nav className="hidden md:flex items-center gap-8">
-<<<<<<< HEAD
-          {["about", "projects", "publications", "cv"].map(section => {})}
-=======
           {["about", "publications", "cv"].map((section) => (
             <button 
               key={section}
@@ -26,7 +23,6 @@ const Header = () => {
               <span className="text-accent-cyber">.</span>{section}()
             </button>
           ))}
->>>>>>> 56bc6f6 (rm projects)
         </nav>
 
         <div className="flex items-center gap-2">
