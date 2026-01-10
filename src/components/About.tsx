@@ -33,7 +33,7 @@ const About = () => {
                 <Code className="h-5 w-5 text-accent-cyber" />
                 <span className="font-mono text-accent-cyber text-sm">bio.md</span>
               </div>
-              <p className="text-muted-foreground leading-relaxed mb-4">I am an  doctoral researcher specializing in topology-aware generative AI . With a strong foundation in scientific research and applied machine learning, I possess proven expertise in developing advanced models for drug discovery and designing antimicrobial peptides. <span className="text-accent-cyber">topology-aware generative AI</span>. 
+              <p className="text-muted-foreground leading-relaxed mb-4">I am an  doctoral researcher specializing in topology-aware generative AI. With a strong foundation in scientific research and applied machine learning, I possess proven expertise in developing advanced models for drug discovery and designing antimicrobial peptides. antimicrobial peptides. <span className="text-accent-cyber">topology-aware generative AI</span>. 
                 With a strong foundation in scientific research and applied machine learning, I possess proven expertise in developing 
                 advanced models for <span className="text-accent-neon">drug discovery</span> and designing <span className="text-accent-neon">antimicrobial peptides</span>.
               </p>
