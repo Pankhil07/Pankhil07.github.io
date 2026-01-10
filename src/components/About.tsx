@@ -1,47 +1,57 @@
-import { MapPin, Mail, Building } from "lucide-react";
+import { MapPin, Mail, Building, Code } from "lucide-react";
 
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-card">
+    <section id="about" className="py-24 bg-card/30">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-display text-4xl font-semibold text-foreground mb-12 text-center">
-            About Me
+          <h2 className="font-display text-4xl font-bold text-foreground mb-2 text-center">
+            <span className="text-accent-cyber font-mono">{"<"}</span>
+            About
+            <span className="text-accent-cyber font-mono">{" />"}</span>
           </h2>
+          <p className="text-center text-muted-foreground font-mono text-sm mb-12">
+            // who am I?
+          </p>
           
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="flex items-center gap-3 text-muted-foreground">
-              <MapPin className="h-5 w-5 text-accent-warm" />
-              <span>San Francisco, CA</span>
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <div className="flex items-center gap-3 p-4 bg-card/50 rounded-lg border border-border hover:border-accent-cyber transition-colors">
+              <MapPin className="h-5 w-5 text-accent-cyber" />
+              <span className="text-muted-foreground font-mono text-sm">Munich, Germany</span>
             </div>
-            <div className="flex items-center gap-3 text-muted-foreground">
-              <Building className="h-5 w-5 text-accent-warm" />
-              <span>University / Company</span>
+            <div className="flex items-center gap-3 p-4 bg-card/50 rounded-lg border border-border hover:border-accent-cyber transition-colors">
+              <Building className="h-5 w-5 text-accent-cyber" />
+              <span className="text-muted-foreground font-mono text-sm">Helmholtz Munich & TUM</span>
             </div>
-            <div className="flex items-center gap-3 text-muted-foreground">
-              <Mail className="h-5 w-5 text-accent-warm" />
-              <span>email@example.com</span>
+            <div className="flex items-center gap-3 p-4 bg-card/50 rounded-lg border border-border hover:border-accent-cyber transition-colors">
+              <Mail className="h-5 w-5 text-accent-cyber" />
+              <span className="text-muted-foreground font-mono text-sm">pankhilgawade2001@gmail.com</span>
             </div>
           </div>
           
-          <div className="prose prose-lg max-w-none">
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              I am a researcher and developer with a passion for solving complex problems through 
-              innovative technology. My work spans across machine learning, data science, and 
-              software engineering, where I strive to bridge the gap between theoretical research 
-              and practical applications.
-            </p>
-            
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Currently, I am pursuing my PhD at [University Name], where I focus on [Research Area]. 
-              My research interests include natural language processing, computer vision, and 
-              reinforcement learning.
-            </p>
-            
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              When I'm not coding or writing papers, you can find me hiking, reading science fiction, 
-              or experimenting with new recipes in the kitchen.
-            </p>
+          <div className="space-y-6">
+            <div className="p-6 bg-card/50 rounded-lg border border-border">
+              <div className="flex items-center gap-2 mb-4">
+                <Code className="h-5 w-5 text-accent-cyber" />
+                <span className="font-mono text-accent-cyber text-sm">bio.md</span>
+              </div>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                I am an ambitious doctoral researcher specializing in <span className="text-accent-cyber">topology-aware generative AI</span>. 
+                With a strong foundation in scientific research and applied machine learning, I possess proven expertise in developing 
+                advanced models for <span className="text-accent-neon">drug discovery</span> and designing <span className="text-accent-neon">antimicrobial peptides</span>.
+              </p>
+              
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                My academic background in statistics and physics further supports my work. I am skilled in programming, 
+                data analysis, and technical writing, and I am motivated to push the boundaries of AI within biomedical applications.
+              </p>
+              
+              <p className="text-muted-foreground leading-relaxed">
+                Currently pursuing my doctoral research at <span className="text-foreground">Helmholtz Munich</span> and 
+                <span className="text-foreground"> TUM School of Computation, Information and Technology</span>, focusing on 
+                geometry-aware transformers for antimicrobial peptide design.
+              </p>
+            </div>
           </div>
         </div>
       </div>

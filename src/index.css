@@ -2,95 +2,101 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
-/* Academic Portfolio Design System */
+/* Techie Dark Portfolio Design System */
 
 @layer base {
   :root {
-    --background: 40 20% 98%;
-    --foreground: 220 20% 12%;
+    --background: 220 20% 97%;
+    --foreground: 220 25% 10%;
 
-    --card: 40 15% 96%;
-    --card-foreground: 220 20% 12%;
+    --card: 220 15% 94%;
+    --card-foreground: 220 25% 10%;
 
-    --popover: 40 20% 98%;
-    --popover-foreground: 220 20% 12%;
+    --popover: 220 20% 97%;
+    --popover-foreground: 220 25% 10%;
 
-    --primary: 220 20% 12%;
-    --primary-foreground: 40 20% 98%;
+    --primary: 220 25% 10%;
+    --primary-foreground: 220 20% 97%;
 
-    --secondary: 40 10% 92%;
-    --secondary-foreground: 220 20% 12%;
+    --secondary: 220 10% 90%;
+    --secondary-foreground: 220 25% 10%;
 
-    --muted: 40 10% 94%;
-    --muted-foreground: 220 10% 45%;
+    --muted: 220 10% 92%;
+    --muted-foreground: 220 10% 40%;
 
-    --accent: 40 10% 90%;
-    --accent-foreground: 220 20% 12%;
+    --accent: 220 10% 88%;
+    --accent-foreground: 220 25% 10%;
 
-    --accent-warm: 35 90% 55%;
-    --accent-warm-foreground: 40 20% 98%;
+    --accent-cyber: 160 100% 45%;
+    --accent-cyber-foreground: 220 25% 10%;
+
+    --accent-neon: 280 100% 65%;
+    --accent-neon-foreground: 220 20% 97%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 40 20% 98%;
+    --destructive-foreground: 220 20% 97%;
 
-    --border: 40 15% 88%;
-    --input: 40 15% 88%;
-    --ring: 35 90% 55%;
+    --border: 220 15% 85%;
+    --input: 220 15% 85%;
+    --ring: 160 100% 45%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 40 15% 96%;
+    --sidebar-background: 220 15% 94%;
     --sidebar-foreground: 220 10% 35%;
-    --sidebar-primary: 220 20% 12%;
-    --sidebar-primary-foreground: 40 20% 98%;
-    --sidebar-accent: 40 10% 92%;
-    --sidebar-accent-foreground: 220 20% 12%;
-    --sidebar-border: 40 15% 88%;
-    --sidebar-ring: 35 90% 55%;
+    --sidebar-primary: 220 25% 10%;
+    --sidebar-primary-foreground: 220 20% 97%;
+    --sidebar-accent: 220 10% 90%;
+    --sidebar-accent-foreground: 220 25% 10%;
+    --sidebar-border: 220 15% 85%;
+    --sidebar-ring: 160 100% 45%;
   }
 
   .dark {
-    --background: 220 20% 8%;
-    --foreground: 40 15% 95%;
+    --background: 220 25% 6%;
+    --foreground: 180 10% 92%;
 
-    --card: 220 18% 12%;
-    --card-foreground: 40 15% 95%;
+    --card: 220 25% 10%;
+    --card-foreground: 180 10% 92%;
 
-    --popover: 220 20% 8%;
-    --popover-foreground: 40 15% 95%;
+    --popover: 220 25% 8%;
+    --popover-foreground: 180 10% 92%;
 
-    --primary: 40 15% 95%;
-    --primary-foreground: 220 20% 8%;
+    --primary: 180 10% 92%;
+    --primary-foreground: 220 25% 6%;
 
-    --secondary: 220 15% 18%;
-    --secondary-foreground: 40 15% 95%;
+    --secondary: 220 20% 14%;
+    --secondary-foreground: 180 10% 92%;
 
-    --muted: 220 15% 18%;
-    --muted-foreground: 40 10% 60%;
+    --muted: 220 20% 14%;
+    --muted-foreground: 180 8% 55%;
 
-    --accent: 220 15% 20%;
-    --accent-foreground: 40 15% 95%;
+    --accent: 220 20% 16%;
+    --accent-foreground: 180 10% 92%;
 
-    --accent-warm: 35 85% 50%;
-    --accent-warm-foreground: 220 20% 8%;
+    --accent-cyber: 160 100% 50%;
+    --accent-cyber-foreground: 220 25% 6%;
 
-    --destructive: 0 62% 30%;
-    --destructive-foreground: 40 15% 95%;
+    --accent-neon: 280 100% 70%;
+    --accent-neon-foreground: 220 25% 6%;
 
-    --border: 220 15% 20%;
-    --input: 220 15% 20%;
-    --ring: 35 85% 50%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 180 10% 92%;
 
-    --sidebar-background: 220 18% 10%;
-    --sidebar-foreground: 40 10% 75%;
-    --sidebar-primary: 35 85% 50%;
-    --sidebar-primary-foreground: 220 20% 8%;
-    --sidebar-accent: 220 15% 15%;
-    --sidebar-accent-foreground: 40 15% 95%;
-    --sidebar-border: 220 15% 18%;
-    --sidebar-ring: 35 85% 50%;
+    --border: 220 20% 18%;
+    --input: 220 20% 18%;
+    --ring: 160 100% 50%;
+
+    --sidebar-background: 220 25% 8%;
+    --sidebar-foreground: 180 8% 65%;
+    --sidebar-primary: 160 100% 50%;
+    --sidebar-primary-foreground: 220 25% 6%;
+    --sidebar-accent: 220 20% 12%;
+    --sidebar-accent-foreground: 180 10% 92%;
+    --sidebar-border: 220 20% 16%;
+    --sidebar-ring: 160 100% 50%;
   }
 }
 
@@ -99,12 +105,34 @@
     @apply border-border;
   }
 
+  html {
+    @apply dark;
+  }
+
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }
 
   h1, h2, h3, h4 {
     @apply font-display;
+  }
+
+  /* Custom scrollbar for dark mode */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-accent-cyber/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-accent-cyber/50;
   }
 }
 
@@ -119,6 +147,14 @@
 
   .animate-fade-in {
     animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
   @keyframes fadeUp {
@@ -139,5 +175,31 @@
     to {
       opacity: 1;
     }
+  }
+
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 10px hsl(160 100% 50% / 0.5), 0 0 20px hsl(160 100% 50% / 0.3);
+    }
+    to {
+      text-shadow: 0 0 20px hsl(160 100% 50% / 0.8), 0 0 30px hsl(160 100% 50% / 0.5);
+    }
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent-cyber to-accent-neon bg-clip-text text-transparent;
+  }
+
+  .glass-card {
+    @apply bg-card/50 backdrop-blur-xl border border-border/50;
+  }
+
+  .terminal-prompt::before {
+    content: "$ ";
+    @apply text-accent-cyber;
+  }
+
+  .code-font {
+    @apply font-mono;
   }
 }

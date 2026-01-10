@@ -1,78 +1,81 @@
-import { FileText, ExternalLink } from "lucide-react";
+import { FileText, ExternalLink, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const publications = [
   {
-    title: "Deep Learning Approaches for Natural Language Understanding",
-    authors: "Your Name, Co-Author A, Co-Author B",
-    venue: "International Conference on Machine Learning (ICML)",
-    year: "2024",
-    link: "https://arxiv.org",
+    title: "Geometry-aware Transformers for Antimicrobial Peptides Design",
+    authors: "Pankhil Gawade, et al.",
+    venue: "Master's Thesis - Helmholtz Munich & TUM",
+    year: "2025",
+    description: "State-of-the-art model for AMP generation using diffusion-based dimensionality reduction and NeuralODEs with Optimal Transport.",
+    link: "https://scholar.google.com/citations?user=e2kHnzsAAAAJ&hl=en",
   },
   {
-    title: "Efficient Transformer Architectures for Low-Resource Settings",
-    authors: "Your Name, Co-Author C",
-    venue: "Association for Computational Linguistics (ACL)",
+    title: "XMM-Newton Observations of Supernova 1987A",
+    authors: "Research Team incl. Pankhil Gawade",
+    venue: "Max Planck Institute of Extraterrestrial Physics",
     year: "2023",
-    link: "https://arxiv.org",
-  },
-  {
-    title: "A Survey on Multi-Modal Learning: Methods and Applications",
-    authors: "Co-Author D, Your Name, Co-Author E",
-    venue: "Neural Information Processing Systems (NeurIPS)",
-    year: "2023",
-    link: "https://arxiv.org",
-  },
-  {
-    title: "Reinforcement Learning for Robotic Manipulation Tasks",
-    authors: "Your Name, Co-Author F, Co-Author G",
-    venue: "IEEE International Conference on Robotics and Automation (ICRA)",
-    year: "2022",
-    link: "https://arxiv.org",
+    description: "Determining properties of Fe-K lines and tracing flux and spectral decline using eROSITA satellite data.",
+    link: "https://scholar.google.com/citations?user=e2kHnzsAAAAJ&hl=en",
   },
 ];
 
 const Publications = () => {
   return (
-    <section id="publications" className="py-24 bg-card">
+    <section id="publications" className="py-24 bg-card/30">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-display text-4xl font-semibold text-foreground mb-4 text-center">
+          <h2 className="font-display text-4xl font-bold text-foreground mb-2 text-center">
+            <span className="text-accent-cyber font-mono">{"<"}</span>
             Publications
+            <span className="text-accent-cyber font-mono">{" />"}</span>
           </h2>
-          <p className="text-muted-foreground text-center mb-12">
-            Selected peer-reviewed publications and preprints.
+          <p className="text-muted-foreground text-center mb-12 font-mono text-sm">
+            // research publications & preprints
           </p>
           
           <div className="space-y-6">
             {publications.map((pub, index) => (
               <div 
                 key={pub.title}
-                className="group p-6 bg-background rounded-lg border border-border hover:border-accent-warm/50 transition-all duration-300"
+                className="group p-6 bg-card/50 rounded-lg border border-border hover:border-accent-cyber/50 transition-all duration-300 hover:shadow-[0_0_30px_hsl(160_100%_50%/0.1)] backdrop-blur-sm"
               >
                 <div className="flex items-start gap-4">
-                  <div className="p-2 bg-muted rounded-lg group-hover:bg-accent-warm/10 transition-colors">
-                    <FileText className="h-5 w-5 text-accent-warm" />
+                  <div className="p-3 bg-accent-cyber/10 rounded-lg border border-accent-cyber/30 group-hover:bg-accent-cyber/20 transition-colors">
+                    <BookOpen className="h-5 w-5 text-accent-cyber" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-display text-lg font-medium text-foreground group-hover:text-accent-warm transition-colors mb-2">
+                    <h3 className="font-display text-lg font-semibold text-foreground group-hover:text-accent-cyber transition-colors mb-2">
                       {pub.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground mb-1">
+                    <p className="text-sm text-accent-cyber font-mono mb-1">
                       {pub.authors}
                     </p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-muted-foreground mb-2">
                       <span className="font-medium">{pub.venue}</span> · {pub.year}
                     </p>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      {pub.description}
+                    </p>
+                    <Button variant="social" size="sm" asChild>
+                      <a href={pub.link} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-4 w-4" />
+                        View on Scholar
+                      </a>
+                    </Button>
                   </div>
-                  <Button variant="ghost" size="icon" asChild className="opacity-0 group-hover:opacity-100 transition-opacity">
-                    <a href={pub.link} target="_blank" rel="noopener noreferrer" aria-label="View publication">
-                      <ExternalLink className="h-4 w-4" />
-                    </a>
-                  </Button>
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-8 text-center">
+            <Button variant="outline" asChild>
+              <a href="https://scholar.google.com/citations?user=e2kHnzsAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
+                <FileText className="h-4 w-4" />
+                View All on Google Scholar
+              </a>
+            </Button>
           </div>
         </div>
       </div>

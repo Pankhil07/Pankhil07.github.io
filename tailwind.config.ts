@@ -14,8 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        display: ["Playfair Display", "Georgia", "serif"],
+        sans: ["Space Grotesk", "system-ui", "sans-serif"],
+        display: ["Space Grotesk", "system-ui", "sans-serif"],
+        mono: ["JetBrains Mono", "monospace"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -42,8 +43,10 @@ export default {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
-          warm: "hsl(var(--accent-warm))",
-          "warm-foreground": "hsl(var(--accent-warm-foreground))",
+          cyber: "hsl(var(--accent-cyber))",
+          "cyber-foreground": "hsl(var(--accent-cyber-foreground))",
+          neon: "hsl(var(--accent-neon))",
+          "neon-foreground": "hsl(var(--accent-neon-foreground))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
