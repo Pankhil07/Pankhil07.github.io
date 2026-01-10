@@ -1,32 +1,20 @@
 import { Github, Linkedin, GraduationCap, Terminal } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
 const Header = () => {
   const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth"
+    });
   };
-
-  return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
+  return <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <button 
-          onClick={() => scrollToSection("hero")}
-          className="flex items-center gap-2 font-mono text-lg font-semibold text-foreground hover:text-accent-cyber transition-colors"
-        >
+        <button onClick={() => scrollToSection("hero")} className="flex items-center gap-2 font-mono text-lg font-semibold text-foreground hover:text-accent-cyber transition-colors">
           <Terminal className="h-5 w-5 text-accent-cyber" />
           <span className="text-accent-cyber">~/</span>pankhil
         </button>
         
         <nav className="hidden md:flex items-center gap-8">
-          {["about", "projects", "publications", "cv"].map((section) => (
-            <button 
-              key={section}
-              onClick={() => scrollToSection(section)}
-              className="text-sm font-mono text-muted-foreground hover:text-accent-cyber transition-colors"
-            >
-              <span className="text-accent-cyber">.</span>{section}()
-            </button>
-          ))}
+          {["about", "projects", "publications", "cv"].map(section => {})}
         </nav>
 
         <div className="flex items-center gap-2">
@@ -47,8 +35,6 @@ const Header = () => {
           </Button>
         </div>
       </div>
-    </header>
-  );
+    </header>;
 };
-
 export default Header;
