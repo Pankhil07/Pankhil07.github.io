@@ -1,8 +1,6 @@
 import { MapPin, Mail, Building, Code } from "lucide-react";
-
 const About = () => {
-  return (
-    <section id="about" className="py-24 bg-card/30">
+  return <section id="about" className="py-24 bg-card/30">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-display text-4xl font-bold text-foreground mb-2 text-center">
@@ -21,7 +19,7 @@ const About = () => {
             </div>
             <div className="flex items-center gap-3 p-4 bg-card/50 rounded-lg border border-border hover:border-accent-cyber transition-colors">
               <Building className="h-5 w-5 text-accent-cyber" />
-              <span className="text-muted-foreground font-mono text-sm">Helmholtz Munich & TUM</span>
+              <span className="text-muted-foreground font-mono text-sm">ELLLIS, Helmholtz Munich & TUM</span>
             </div>
             <div className="flex items-center gap-3 p-4 bg-card/50 rounded-lg border border-border hover:border-accent-cyber transition-colors">
               <Mail className="h-5 w-5 text-accent-cyber" />
@@ -55,8 +53,6 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 const Hero = () => {
   return <section id="hero" className="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
       {/* Background grid effect */}
-      <div className="absolute inset-0 opacity-30 bg-[accent-neon-foreground] text-[sidebar-primary-foreground] text-primary-foreground bg-primary-foreground border border-primary-foreground border-dashed" />
+      <div className="absolute inset-0 opacity-30 border-destructive bg-[accent-neon-foreground] text-[sidebar-primary-foreground] bg-primary-foreground text-primary-foreground" />
       
       {/* Glowing orbs */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-cyber/10 rounded-full blur-[128px] animate-pulse-slow" />
@@ -26,7 +26,7 @@ const Hero = () => {
           animationDelay: "0.2s"
         }}>
             <span className="text-muted-foreground font-mono text-2xl md:text-3xl block mb-2">{"// Hello, I'm"}</span>
-            <span className="gradient-text animate-glow">Pankhil Gawade</span>
+            <span className="gradient-text animate-glow font-light">Pankhil Gawade</span>
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed animate-fade-up font-mono" style={{
