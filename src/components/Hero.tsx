@@ -1,5 +1,6 @@
 import { ArrowDown, Terminal, Braces, Cpu } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 const Hero = () => {
   return <section id="hero" className="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
       {/* Background grid effect */}
@@ -20,6 +21,21 @@ const Hero = () => {
               <Cpu className="h-4 w-4" />
               Doctoral Researcher @ Helmholtz Munich & TUM
             </span>
+          </div>
+          
+          {/* Profile Photo */}
+          <div className="mb-8 animate-fade-up flex justify-center" style={{
+          animationDelay: "0.15s"
+        }}>
+            <div className="relative">
+              <div className="absolute inset-0 bg-accent-cyber/30 rounded-full blur-xl animate-pulse-slow"></div>
+              <Avatar className="h-32 w-32 md:h-40 md:w-40 border-4 border-accent-cyber/50 shadow-[0_0_30px_hsl(160_100%_50%/0.3)] hover:shadow-[0_0_40px_hsl(160_100%_50%/0.5)] transition-all duration-300">
+                <AvatarImage src="/pg.jpg" alt="Pankhil Gawade" className="object-cover" />
+                <AvatarFallback className="bg-accent-cyber/20 text-accent-cyber text-2xl font-bold">
+                  PG
+                </AvatarFallback>
+              </Avatar>
+            </div>
           </div>
           
           <h1 className="font-display text-5xl md:text-7xl font-bold text-foreground mb-6 animate-fade-up" style={{
