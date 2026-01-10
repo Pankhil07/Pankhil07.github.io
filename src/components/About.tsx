@@ -33,15 +33,16 @@ const About = () => {
                 <Code className="h-5 w-5 text-accent-cyber" />
                 <span className="font-mono text-accent-cyber text-sm">bio.md</span>
               </div>
-              <p className="text-muted-foreground leading-relaxed mb-4">I am an  doctoral researcher specializing in topology-aware generative AI. With a strong foundation in scientific research and applied machine learning, I possess proven expertise in developing advanced models for drug discovery and designing antimicrobial peptides. antimicrobial peptides. <span className="text-accent-cyber">topology-aware generative AI</span>. 
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                I am a doctoral researcher specializing in <span className="text-accent-cyber">topology-aware generative AI</span>. 
                 With a strong foundation in scientific research and applied machine learning, I possess proven expertise in developing 
                 advanced models for <span className="text-accent-neon">drug discovery</span> and designing <span className="text-accent-neon">antimicrobial peptides</span>.
               </p>
               
-              
-              
-              <p className="text-muted-foreground leading-relaxed">I am currently pursuing my PhD at Helmholtz Munich  and the TUM School of Computation, Information and Technology under the supervision of Dr. Ewa Szczurek, Dr Bastian Rieck and Dr. Guy Wolf.<span className="text-foreground">Helmholtz Munich</span> and 
-                <span className="text-foreground"> TUM School of Computation, Information and Technology</span>, focusing on 
+              <p className="text-muted-foreground leading-relaxed">
+                I am currently pursuing my PhD at <span className="text-foreground">Helmholtz Munich</span> and 
+                <span className="text-foreground"> TUM School of Computation, Information and Technology</span> under the supervision of 
+                Dr. Ewa Szczurek, Dr. Bastian Rieck, and Dr. Guy Wolf, focusing on 
                 geometry-aware transformers for antimicrobial peptide design.
               </p>
             </div>
