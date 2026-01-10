@@ -19,7 +19,7 @@ const About = () => {
             </div>
             <div className="flex items-center gap-3 p-4 bg-card/50 rounded-lg border border-border hover:border-accent-cyber transition-colors">
               <Building className="h-5 w-5 text-accent-cyber" />
-              <span className="text-muted-foreground font-mono text-sm">ELLLIS, Helmholtz Munich & TUM</span>
+              <span className="text-muted-foreground font-mono text-sm">Helmholtz Munich & TUM</span>
             </div>
             <div className="flex items-center gap-3 p-4 bg-card/50 rounded-lg border border-border hover:border-accent-cyber transition-colors">
               <Mail className="h-5 w-5 text-accent-cyber" />
@@ -33,19 +33,14 @@ const About = () => {
                 <Code className="h-5 w-5 text-accent-cyber" />
                 <span className="font-mono text-accent-cyber text-sm">bio.md</span>
               </div>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                I am an ambitious doctoral researcher specializing in <span className="text-accent-cyber">topology-aware generative AI</span>. 
+              <p className="text-muted-foreground leading-relaxed mb-4">I am an  doctoral researcher specializing in topology-aware generative AI. With a strong foundation in scientific research and applied machine learning, I possess proven expertise in developing advanced models for drug discovery and designing antimicrobial peptides.<span className="text-accent-cyber">topology-aware generative AI</span>. 
                 With a strong foundation in scientific research and applied machine learning, I possess proven expertise in developing 
                 advanced models for <span className="text-accent-neon">drug discovery</span> and designing <span className="text-accent-neon">antimicrobial peptides</span>.
               </p>
               
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                My academic background in statistics and physics further supports my work. I am skilled in programming, 
-                data analysis, and technical writing, and I am motivated to push the boundaries of AI within biomedical applications.
-              </p>
               
-              <p className="text-muted-foreground leading-relaxed">
-                Currently pursuing my doctoral research at <span className="text-foreground">Helmholtz Munich</span> and 
+              
+              <p className="text-muted-foreground leading-relaxed">I am currently pursuing my PhD at Helmholtz Munich and the TUM School of Computation, Information and Technology, where I focus on geometry-aware transformers and principled generation strategies for peptide design.<span className="text-foreground">Helmholtz Munich</span> and 
                 <span className="text-foreground"> TUM School of Computation, Information and Technology</span>, focusing on 
                 geometry-aware transformers for antimicrobial peptide design.
               </p>
