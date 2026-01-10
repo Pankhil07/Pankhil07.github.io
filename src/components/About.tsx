@@ -43,7 +43,7 @@ const About = () => {
                 I am currently pursuing my PhD at <span className="text-foreground">Helmholtz Munich</span> and 
                 <span className="text-foreground"> TUM School of Computation, Information and Technology</span> under the supervision of{' '}
                 <a 
-                  href="https://scholar.google.com/citations?user=YOUR_USER_ID_1" 
+                  href="https://scholar.google.com/citations?user=hltmGf0AAAAJ&hl=en" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-accent-cyber hover:text-accent-neon underline font-semibold transition-colors"
@@ -52,7 +52,7 @@ const About = () => {
                 </a>
                 ,{' '}
                 <a 
-                  href="https://scholar.google.com/citations?user=YOUR_USER_ID_2" 
+                  href="https://scholar.google.com/citations?user=La7zuKQAAAAJ&hl=de" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-accent-cyber hover:text-accent-neon underline font-semibold transition-colors"
@@ -61,7 +61,7 @@ const About = () => {
                 </a>
                 , and{' '}
                 <a 
-                  href="https://scholar.google.com/citations?user=YOUR_USER_ID_3" 
+                  href="https://scholar.google.com/citations?user=g0k3SjcAAAAJ&hl=en" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-accent-cyber hover:text-accent-neon underline font-semibold transition-colors"
