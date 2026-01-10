@@ -1,5 +1,4 @@
 import { MapPin, Mail, Building, Code } from "lucide-react";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 const About = () => {
   return <section id="about" className="py-24 bg-card/30">
       <div className="container mx-auto px-6">
@@ -12,19 +11,6 @@ const About = () => {
           <p className="text-center text-muted-foreground font-mono text-sm mb-12">
             // who am I?
           </p>
-          
-          {/* Profile Photo in About Section */}
-          <div className="flex justify-center mb-8">
-            <div className="relative">
-              <div className="absolute inset-0 bg-accent-cyber/20 rounded-full blur-xl"></div>
-              <Avatar className="h-40 w-40 md:h-48 md:w-48 border-4 border-accent-cyber/50 shadow-[0_0_30px_hsl(160_100%_50%/0.2)] hover:shadow-[0_0_40px_hsl(160_100%_50%/0.4)] transition-all duration-300">
-                <AvatarImage src="/pg.jpg" alt="Pankhil Gawade" className="object-cover" />
-                <AvatarFallback className="bg-accent-cyber/20 text-accent-cyber text-3xl font-bold">
-                  PG
-                </AvatarFallback>
-              </Avatar>
-            </div>
-          </div>
           
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             <div className="flex items-center gap-3 p-4 bg-card/50 rounded-lg border border-border hover:border-accent-cyber transition-colors">
