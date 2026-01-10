@@ -41,9 +41,34 @@ const About = () => {
               
               <p className="text-muted-foreground leading-relaxed">
                 I am currently pursuing my PhD at <span className="text-foreground">Helmholtz Munich</span> and 
-                <span className="text-foreground"> TUM School of Computation, Information and Technology</span> under the supervision of 
-                Dr. Ewa Szczurek, Dr. Bastian Rieck, and Dr. Guy Wolf, focusing on 
-                geometry-aware transformers for antimicrobial peptide design.
+                <span className="text-foreground"> TUM School of Computation, Information and Technology</span> under the supervision of{' '}
+                <a 
+                  href="https://scholar.google.com/citations?user=YOUR_USER_ID_1" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-accent-cyber hover:text-accent-neon underline font-semibold transition-colors"
+                >
+                  Dr. Ewa Szczurek
+                </a>
+                ,{' '}
+                <a 
+                  href="https://scholar.google.com/citations?user=YOUR_USER_ID_2" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-accent-cyber hover:text-accent-neon underline font-semibold transition-colors"
+                >
+                  Dr. Bastian Rieck
+                </a>
+                , and{' '}
+                <a 
+                  href="https://scholar.google.com/citations?user=YOUR_USER_ID_3" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-accent-cyber hover:text-accent-neon underline font-semibold transition-colors"
+                >
+                  Dr. Guy Wolf
+                </a>
+                , focusing on geometry-aware transformers for antimicrobial peptide design.
               </p>
             </div>
           </div>
