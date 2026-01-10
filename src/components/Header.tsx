@@ -14,7 +14,19 @@ const Header = () => {
         </button>
         
         <nav className="hidden md:flex items-center gap-8">
+<<<<<<< HEAD
           {["about", "projects", "publications", "cv"].map(section => {})}
+=======
+          {["about", "publications", "cv"].map((section) => (
+            <button 
+              key={section}
+              onClick={() => scrollToSection(section)}
+              className="text-sm font-mono text-muted-foreground hover:text-accent-cyber transition-colors"
+            >
+              <span className="text-accent-cyber">.</span>{section}()
+            </button>
+          ))}
+>>>>>>> 56bc6f6 (rm projects)
         </nav>
 
         <div className="flex items-center gap-2">

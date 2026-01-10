@@ -62,7 +62,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-up" style={{
           animationDelay: "0.4s"
         }}>
-            <Button variant="hero" size="lg" onClick={() => document.getElementById("projects")?.scrollIntoView({
+            <Button variant="hero" size="lg" onClick={() => document.getElementById("publications")?.scrollIntoView({
             behavior: "smooth"
           })}>
               <Braces className="h-4 w-4" />
