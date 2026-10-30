@@ -23,7 +23,7 @@ const publications: Publication[] = [
     links: [
       {
         label: "arXiv",
-        url: "https://arxiv.org/a/gawade_p_1",
+        url: "https://arxiv.org/search/?query=Closed+Form+Depth-Width+Law+Neural+Collapse&searchtype=title",
       },
     ],
   },
