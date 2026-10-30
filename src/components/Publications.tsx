@@ -14,6 +14,42 @@ type Publication = {
 
 const publications: Publication[] = [
   {
+    title: "A Closed Form Depth-Width Law for Neural Collapse in Deep Linear Networks",
+    authors: "Pankhil Gawade, K. Fischer, Guy Wolf, et al.",
+    venue: "arXiv preprint",
+    year: "2026",
+    description:
+      "Derives, in closed form, how depth and width shape representation geometry via neural collapse (NC1–NC3) in deep linear networks — a representation-level scaling law in the depth-to-width ratio L/N.",
+    links: [
+      {
+        label: "arXiv",
+        url: "https://arxiv.org/a/gawade_p_1",
+      },
+    ],
+  },
+  {
+    title: "Scalable and Interpretable Representation Alignment with Ordinal Similarity",
+    authors: "Diogo Soares, Pankhil Gawade, Andrea Dittadi, Ewa Szczurek",
+    venue: "International Conference on Machine Learning (ICML)",
+    year: "2026",
+    description:
+      "An ordinal-similarity framework (Triplet & Quadruplet Similarity Indices) for measuring representation alignment that is interpretable, robust to outliers, and computationally efficient.",
+    links: [
+      { label: "ICML", url: "https://icml.cc/virtual/2026/poster/65177" },
+      { label: "arXiv", url: "https://arxiv.org/abs/2606.16379" },
+    ],
+  },
+  {
+    title: "Sample Efficient Generative Molecular Optimization with Joint Self-Improvement",
+    authors:
+      "Serra Korkmaz, Adam Izdebski, Jonathan Pirnay, Rasmus Møller-Larsen, Michal Kmicikiewicz, Pankhil Gawade, Dominik G. Grimm, Ewa Szczurek",
+    venue: "arXiv preprint",
+    year: "2026",
+    description:
+      "Joint Self-Improvement: a joint generative-predictive model with self-improving sampling that outperforms state-of-the-art molecular optimization under limited evaluation budgets.",
+    links: [{ label: "arXiv", url: "https://arxiv.org/abs/2602.10984" }],
+  },
+  {
     title: "Synergistic Benefits of Joint Molecule Generation and Property Prediction",
     authors:
       "Adam Izdebski, Jan Olszewski, Pankhil Gawade, Krzysztof Koras, Serra Korkmaz, Valentin Rauscher, Jakub M. Tomczak, Ewa Szczurek",
