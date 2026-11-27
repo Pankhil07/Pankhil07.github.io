@@ -64,7 +64,7 @@ const Header = () => {
         >
           <Terminal className="h-4 w-4 text-accent-cyber shrink-0" />
           <span>
-            <span className="text-accent-cyber">pankhil@tum</span>
+            <span className="text-accent-cyber">pankhil@helmholtz</span>
             <span className="text-muted-foreground">:</span>
             <span className="text-accent-neon">~</span>
             <span className="text-muted-foreground">$</span>
