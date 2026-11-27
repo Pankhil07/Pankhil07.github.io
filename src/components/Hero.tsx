@@ -68,9 +68,9 @@ const Hero = () => {
                     className="absolute -bottom-1 -right-1 w-2.5 h-2.5 border-b-2 border-r-2 border-accent-neon"
                     aria-hidden="true"
                   />
-                  <Avatar className="h-24 w-24 md:h-28 md:w-28 rounded-none">
+                  <Avatar className="h-32 w-32 sm:h-36 sm:w-36 md:h-40 md:w-40 rounded-none">
                     <AvatarImage src="/pg.jpg" alt="Pankhil Gawade" className="object-cover" />
-                    <AvatarFallback className="rounded-none bg-secondary text-accent-cyber text-2xl font-bold">
+                    <AvatarFallback className="rounded-none bg-secondary text-accent-cyber text-3xl font-bold">
                       PG
                     </AvatarFallback>
                   </Avatar>
