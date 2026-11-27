@@ -97,7 +97,7 @@ const buildCvLines = (): PdfLine[] => {
     spaceAfter: 2,
   });
   lines.push({
-    text: "Portfolio: pankhil-gawade.lovable.app  |  Google Scholar: scholar.google.com/citations?user=e2kHnzsAAAAJ",
+    text: "Portfolio: pankhil07.github.io  |  Google Scholar: scholar.google.com/citations?user=e2kHnzsAAAAJ",
     font: "F3",
     size: 8.5,
     spaceAfter: 6,
