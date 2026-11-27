@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Briefcase, GraduationCap, Download, Code, Trophy } from "lucide-react";
+import { Briefcase, GraduationCap, Download, Code, Trophy, ShieldCheck } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { downloadCvPdf } from "@/lib/generateCvPdf";
@@ -8,6 +8,7 @@ const education = [
   {
     degree: "Doctoral Researcher",
     institution: "Helmholtz Munich & TUM School of Computation, Information and Technology",
+    affiliations: "ELLIS • MCML • ELIZA",
     period: "October 2025 - Present",
     description: "Research focus on topology-aware generative AI for drug discovery.",
   },
@@ -68,6 +69,14 @@ const awards = [
   },
 ];
 
+const academicService = [
+  {
+    role: "Peer Reviewer",
+    venue: "AISTATS",
+    fullName: "International Conference on Artificial Intelligence and Statistics",
+  },
+];
+
 const skills = {
   programming: ["Python", "Pascal", "Linux", "R", "Git", "SQL"],
   ml: ["PyTorch", "TensorFlow", "Machine Learning", "Deep Learning"],
@@ -92,7 +101,7 @@ const CV = () => {
   };
 
   return (
-    <section id="cv" className="py-20 border-t border-border/60 bg-background/40">
+    <section id="cv" className="py-20 border-t border-border/60 bg-background/60">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
           {/* Header + Download Action */}
@@ -102,7 +111,7 @@ const CV = () => {
                 $ cat ~/curriculum_vitae.txt
               </p>
               <h2 className="font-mono text-2xl sm:text-3xl font-bold text-foreground">
-                <span className="text-accent-cyber">03 //</span> CURRICULUM VITAE
+                <span className="text-accent-cyber">04 //</span> CURRICULUM VITAE
               </h2>
             </div>
 
@@ -119,7 +128,7 @@ const CV = () => {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8">
-            {/* Left Column: Education + Awards */}
+            {/* Left Column: Education + Academic Service + Awards */}
             <div className="space-y-8">
               <div className="unix-window">
                 <div className="unix-titlebar">
@@ -132,18 +141,44 @@ const CV = () => {
 
                 <div className="p-5 sm:p-6 space-y-6">
                   {education.map((edu) => (
-                    <div
-                      key={edu.degree}
-                      className="relative pl-5 border-l-2 border-accent-cyber/60"
-                    >
-                      <span
-                        className="absolute -left-[5px] top-1.5 w-2 h-2 bg-accent-cyber"
-                        aria-hidden="true"
-                      />
+                    <div key={edu.degree} className="relative pl-5 border-l-2 border-accent-cyber/60">
+                      <span className="absolute -left-[5px] top-1.5 w-2 h-2 bg-accent-cyber" aria-hidden="true" />
                       <h3 className="font-mono font-bold text-foreground text-base">{edu.degree}</h3>
                       <p className="text-sm text-accent-cyber font-mono mt-0.5">{edu.institution}</p>
+                      <p className="text-xs text-foreground/85 font-mono mt-1">
+                        <span className="text-muted-foreground">Affiliations:</span> {edu.affiliations}
+                      </p>
                       <p className="text-xs text-accent-neon font-mono mt-1 mb-2">[{edu.period}]</p>
                       <p className="text-sm text-muted-foreground leading-relaxed">{edu.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="unix-window">
+                <div className="unix-titlebar">
+                  <div className="flex items-center gap-2 text-foreground font-semibold">
+                    <ShieldCheck className="h-4 w-4 text-accent-cyber" />
+                    <span>ACADEMIC SERVICE</span>
+                  </div>
+                  <span className="text-accent-cyber">[{academicService.length}]</span>
+                </div>
+
+                <div className="p-5 sm:p-6 space-y-3">
+                  {academicService.map((item) => (
+                    <div
+                      key={item.venue}
+                      className="p-4 bg-background/70 border border-border hover:border-accent-cyber transition-colors"
+                    >
+                      <div className="flex items-center justify-between gap-2 mb-1">
+                        <h3 className="font-mono font-bold text-accent-cyber text-sm">
+                          &gt; {item.role} — {item.venue}
+                        </h3>
+                        <span className="px-2 py-0.5 bg-accent-cyber/15 border border-accent-cyber/50 text-accent-cyber text-[11px] font-mono">
+                          REVIEWER
+                        </span>
+                      </div>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{item.fullName}</p>
                     </div>
                   ))}
                 </div>
@@ -188,10 +223,7 @@ const CV = () => {
                     key={exp.role + exp.company + exp.period}
                     className="relative pl-5 border-l-2 border-border hover:border-accent-cyber transition-colors"
                   >
-                    <span
-                      className="absolute -left-[5px] top-1.5 w-2 h-2 bg-accent-cyber"
-                      aria-hidden="true"
-                    />
+                    <span className="absolute -left-[5px] top-1.5 w-2 h-2 bg-accent-cyber" aria-hidden="true" />
                     <h3 className="font-mono font-bold text-foreground text-base">{exp.role}</h3>
                     <p className="text-sm text-accent-cyber font-mono mt-0.5">{exp.company}</p>
                     <p className="text-xs text-accent-neon font-mono mt-1 mb-2">[{exp.period}]</p>

@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Publications from "@/components/Publications";
+import Talks from "@/components/Talks";
 import CV from "@/components/CV";
 import Footer from "@/components/Footer";
 import MatrixBackground from "@/components/MatrixBackground";
@@ -23,6 +24,7 @@ const Index = () => {
           <Hero />
           <About />
           <Publications />
+          <Talks />
           <CV />
         </main>
         <Footer />

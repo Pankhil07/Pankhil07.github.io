@@ -85,7 +85,7 @@ const buildCvLines = (): PdfLine[] => {
   // Header
   lines.push({ text: "PANKHIL GAWADE", font: "F2", size: 20, spaceAfter: 4 });
   lines.push({
-    text: "Doctoral Researcher | Helmholtz Munich & TUM School of Computation, Information and Technology",
+    text: "Doctoral Researcher | Helmholtz Munich & TUM | ELLIS, MCML, ELIZA",
     font: "F1",
     size: 10,
     spaceAfter: 3,
@@ -104,9 +104,9 @@ const buildCvLines = (): PdfLine[] => {
   });
 
   // Research Profile
-  addSection("Research Focus");
+  addSection("Research Focus & Affiliations");
   addWrapped(
-    "Doctoral researcher specializing in topology-aware generative AI, drug discovery, and antimicrobial peptide (AMP) design under the supervision of Dr. Ewa Szczurek, Dr. Bastian Rieck, and Dr. Guy Wolf at Helmholtz Munich and Technical University of Munich (TUM).",
+    "Doctoral researcher specializing in topology-aware generative AI, drug discovery, and antimicrobial peptide (AMP) design under Dr. Ewa Szczurek, Dr. Bastian Rieck, and Dr. Guy Wolf at Helmholtz Munich and TUM. Affiliated with ELLIS (European Laboratory for Learning and Intelligent Systems), MCML (Munich Center for Machine Learning), and ELIZA (Konrad Zuse School of Excellence in Learning and Intelligent Systems).",
     "F1",
     9.5,
     94,
@@ -123,12 +123,56 @@ const buildCvLines = (): PdfLine[] => {
     spaceAfter: 2,
   });
   lines.push({
-    text: "Helmholtz Munich & TUM School of Computation, Information and Technology",
+    text: "Helmholtz Munich & TUM School of Computation, Information and Technology (ELLIS, MCML, ELIZA)",
     font: "F3",
-    size: 9,
+    size: 8.8,
     spaceAfter: 2,
   });
-  addWrapped("Research focus on topology-aware generative AI for drug discovery and geometry-aware transformers for antimicrobial peptide design.", "F1", 9.5, 92, 0, 4);
+  addWrapped(
+    "Research focus on topology-aware generative AI for drug discovery and geometry-aware transformers for antimicrobial peptide design.",
+    "F1",
+    9.5,
+    92,
+    0,
+    4,
+  );
+
+  // Publications
+  addSection("Peer-Reviewed Publications");
+  const publications = [
+    "[1] Pankhil Gawade, Kirsten Fischer, Guy Wolf, Ewa Szczurek. A Closed Form Depth-Width Law for Neural Collapse in Deep Linear Networks. NeurIPS 2026 - AXIOM Workshop, 2026.",
+    "[2] Diogo Soares, Pankhil Gawade, Andrea Dittadi, Ewa Szczurek. Scalable and Interpretable Representation Alignment with Ordinal Similarity. ICML, 2026 (arXiv:2606.16379).",
+    "[3] Serra Korkmaz, Adam Izdebski, Jonathan Pirnay, Rasmus Moller-Larsen, Michal Kmicikiewicz, Pankhil Gawade, Maksim Pavlov, Dominik G. Grimm, Ewa Szczurek. Sample Efficient Generative Molecular Optimization with Joint Self-Improvement. NeurIPS 2026 & ICLR 2026 AI4MAT Workshop (arXiv:2602.10984).",
+    "[4] Adam Izdebski, Jan Olszewski, Pankhil Gawade, Krzysztof Koras, Serra Korkmaz, Valentin Rauscher, Jakub M. Tomczak, Ewa Szczurek. Synergistic Benefits of Joint Molecule Generation and Property Prediction. TMLR, 2026 (arXiv:2504.16559).",
+    "[5] Pankhil Gawade, Adam Izdebski, Myriam Lizotte, Kevin R. Moon, Jake Slater Rhodes, Guy Wolf, Ewa Szczurek. Freeze, Diffuse, Decode: Task-Aware Adaptation of Transformer Embeddings for Antimicrobial Peptide Design. TAG-DS 2026, PMLR Vol. 334, pp. 216-236, 2026.",
+    "[6] Rasmus Moller-Larsen, Adam Izdebski, Jan Olszewski, Pankhil Gawade, Michal Kmicikiewicz, Wojciech Zarzecki, Ewa Szczurek. seqme: a Python library for evaluating biological sequence design from generative models. Bioinformatics Advances (Oxford University Press), Vol. 6, Issue 1, vbag212, 2026.",
+  ];
+
+  publications.forEach((pub) => {
+    addWrapped(pub, "F1", 9, 94, 0, 4);
+  });
+
+  // Talks
+  addSection("Talks");
+  addWrapped(
+    "- AMPFormer: A Peptide Foundation Model for Antimicrobial Discovery. Helmholtz AI Conference (HAICON26), Session 3a - Foundation Models for Science, June 10, 2026. Video: https://www.youtube.com/watch?v=H0zLf_LyL0U",
+    "F1",
+    9.2,
+    92,
+    4,
+    4,
+  );
+
+  // Academic Service
+  addSection("Academic Service");
+  addWrapped(
+    "- Peer Reviewer: International Conference on Artificial Intelligence and Statistics (AISTATS).",
+    "F1",
+    9.2,
+    92,
+    4,
+    4,
+  );
 
   // Experience
   addSection("Research Experience");
@@ -181,21 +225,6 @@ const buildCvLines = (): PdfLine[] => {
     });
     lines.push({ text: exp.org, font: "F3", size: 8.8, spaceAfter: 1.5 });
     addWrapped(`- ${exp.desc}`, "F1", 9.2, 92, 8, 3);
-  });
-
-  // Publications
-  addSection("Publications & Preprints");
-  const publications = [
-    "[1] Pankhil Gawade, K. Fischer, Guy Wolf, et al. A Closed Form Depth-Width Law for Neural Collapse in Deep Linear Networks. arXiv preprint, 2026.",
-    "[2] Diogo Soares, Pankhil Gawade, Andrea Dittadi, Ewa Szczurek. Scalable and Interpretable Representation Alignment with Ordinal Similarity. ICML, 2026 (arXiv:2606.16379).",
-    "[3] Serra Korkmaz, Adam Izdebski, Jonathan Pirnay, Rasmus Moller-Larsen, Michal Kmicikiewicz, Pankhil Gawade, Dominik G. Grimm, Ewa Szczurek. Sample Efficient Generative Molecular Optimization with Joint Self-Improvement. arXiv preprint, 2026 (arXiv:2602.10984).",
-    "[4] Adam Izdebski, Jan Olszewski, Pankhil Gawade, Krzysztof Koras, Serra Korkmaz, Valentin Rauscher, Jakub M. Tomczak, Ewa Szczurek. Synergistic Benefits of Joint Molecule Generation and Property Prediction. TMLR, 2026 (arXiv:2504.16559).",
-    "[5] Pankhil Gawade, Adam Izdebski, Myriam Lizotte, Kevin R. Moon, Jake S. Rhodes, Guy Wolf, Ewa Szczurek. Freeze, Diffuse, Decode: Geometry-Aware Adaptation of Pretrained Transformer Embeddings for Antimicrobial Peptide Design. arXiv preprint, 2025 (arXiv:2511.23120).",
-    "[6] Rasmus Moller-Larsen, Adam Izdebski, Jan Olszewski, Pankhil Gawade, Michal Kmicikiewicz, Wojciech Zarzecki, Ewa Szczurek. seqme: a Python library for evaluating biological sequence design. arXiv preprint, 2025 (arXiv:2511.04239).",
-  ];
-
-  publications.forEach((pub) => {
-    addWrapped(pub, "F1", 9, 94, 0, 4);
   });
 
   // Awards
@@ -264,9 +293,6 @@ const createPdfBlob = (): Blob => {
     y -= line.size * 1.15 + (line.spaceAfter ?? 2);
   }
 
-  // Assemble PDF objects
-  // 1: Catalog, 2: Pages, 3: F1 Helvetica, 4: F2 Helvetica-Bold, 5: F3 Courier
-  // Then for each page i: pageObjId = 6 + i*2, contentObjId = 7 + i*2
   const objects: string[] = [];
   const pageObjIds: number[] = [];
 

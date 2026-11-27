@@ -3,6 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const HERO_SKILLS = ["PyTorch", "TensorFlow", "Python", "Machine Learning", "Deep Learning"];
+const AFFILIATIONS = [
+  { short: "ELLIS", title: "European Laboratory for Learning and Intelligent Systems", url: "https://ellis.eu" },
+  { short: "MCML", title: "Munich Center for Machine Learning", url: "https://mcml.ai" },
+  { short: "ELIZA", title: "Konrad Zuse School of Excellence in Learning and Intelligent Systems", url: "https://eliza.school" },
+];
 
 const Hero = () => {
   return (
@@ -14,9 +19,7 @@ const Hero = () => {
             {/* Classic 90s Titlebar */}
             <div className="unix-titlebar">
               <div className="flex items-center gap-2 min-w-0">
-                <span className="inline-flex items-center gap-1.5 text-accent-cyber font-bold shrink-0">
-                  [■]
-                </span>
+                <span className="inline-flex items-center gap-1.5 text-accent-cyber font-bold shrink-0">[■]</span>
                 <span className="truncate text-foreground/90">tty1 — /home/pankhil/motd.sh</span>
               </div>
               <div className="hidden sm:flex items-center gap-3 shrink-0">
@@ -26,22 +29,45 @@ const Hero = () => {
             </div>
 
             <div className="p-6 sm:p-10 md:p-12">
-              {/* Status banner */}
-              <div className="mb-8 flex justify-center md:justify-start">
+              {/* Status banner + research network affiliations */}
+              <div className="mb-8 flex flex-wrap items-center justify-center md:justify-start gap-2">
                 <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-accent-neon/10 border border-accent-neon/50 text-accent-neon text-xs sm:text-sm font-mono">
                   <Cpu className="h-4 w-4 shrink-0" />
                   <span>Doctoral Researcher @ Helmholtz Munich &amp; TUM</span>
                 </span>
+                {AFFILIATIONS.map((aff) => (
+                  <a
+                    key={aff.short}
+                    href={aff.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={aff.title}
+                    className="inline-flex items-center px-2.5 py-1.5 bg-accent-cyber/10 border border-accent-cyber/50 text-accent-cyber text-xs font-mono font-semibold hover:bg-accent-cyber hover:text-accent-cyber-foreground transition-colors"
+                  >
+                    {aff.short}
+                  </a>
+                ))}
               </div>
 
               {/* Profile Photo + Name */}
               <div className="mb-8 flex flex-col md:flex-row items-center md:items-center gap-6 md:gap-8 text-center md:text-left">
                 <div className="relative flex-shrink-0 p-1.5 border border-accent-cyber/70 bg-background">
-                  {/* Corner bracket ticks */}
-                  <span className="absolute -top-1 -left-1 w-2.5 h-2.5 border-t-2 border-l-2 border-accent-neon" aria-hidden="true" />
-                  <span className="absolute -top-1 -right-1 w-2.5 h-2.5 border-t-2 border-r-2 border-accent-neon" aria-hidden="true" />
-                  <span className="absolute -bottom-1 -left-1 w-2.5 h-2.5 border-b-2 border-l-2 border-accent-neon" aria-hidden="true" />
-                  <span className="absolute -bottom-1 -right-1 w-2.5 h-2.5 border-b-2 border-r-2 border-accent-neon" aria-hidden="true" />
+                  <span
+                    className="absolute -top-1 -left-1 w-2.5 h-2.5 border-t-2 border-l-2 border-accent-neon"
+                    aria-hidden="true"
+                  />
+                  <span
+                    className="absolute -top-1 -right-1 w-2.5 h-2.5 border-t-2 border-r-2 border-accent-neon"
+                    aria-hidden="true"
+                  />
+                  <span
+                    className="absolute -bottom-1 -left-1 w-2.5 h-2.5 border-b-2 border-l-2 border-accent-neon"
+                    aria-hidden="true"
+                  />
+                  <span
+                    className="absolute -bottom-1 -right-1 w-2.5 h-2.5 border-b-2 border-r-2 border-accent-neon"
+                    aria-hidden="true"
+                  />
                   <Avatar className="h-24 w-24 md:h-28 md:w-28 rounded-none">
                     <AvatarImage src="/pg.jpg" alt="Pankhil Gawade" className="object-cover" />
                     <AvatarFallback className="rounded-none bg-secondary text-accent-cyber text-2xl font-bold">
@@ -123,10 +149,10 @@ const Hero = () => {
                 <span className="text-accent-cyber">LOC:</span> Munich, DE
               </span>
               <span>
-                <span className="text-accent-cyber">LAB:</span> AI for Health (Szczurek Lab)
+                <span className="text-accent-cyber">NETWORKS:</span> ELLIS · MCML · ELIZA
               </span>
               <span>
-                <span className="text-accent-neon">PUBS:</span> 6 indexed
+                <span className="text-accent-neon">PUBS:</span> 6 published
               </span>
             </div>
           </div>

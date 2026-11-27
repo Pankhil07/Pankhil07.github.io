@@ -1,8 +1,26 @@
 import { useState } from "react";
-import { MapPin, Mail, Building, FileCode2, Copy, Check } from "lucide-react";
+import { MapPin, Mail, Building, FileCode2, Copy, Check, Network, ExternalLink } from "lucide-react";
 import { toast } from "sonner";
 
 const EMAIL = "pankhilgawade2001@gmail.com";
+
+const RESEARCH_AFFILIATIONS = [
+  {
+    code: "ELLIS",
+    name: "European Laboratory for Learning and Intelligent Systems",
+    url: "https://ellis.eu",
+  },
+  {
+    code: "MCML",
+    name: "Munich Center for Machine Learning",
+    url: "https://mcml.ai",
+  },
+  {
+    code: "ELIZA",
+    name: "Konrad Zuse School of Excellence in Learning and Intelligent Systems",
+    url: "https://eliza.school",
+  },
+];
 
 const About = () => {
   const [copied, setCopied] = useState(false);
@@ -24,9 +42,7 @@ const About = () => {
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
           <div className="mb-10">
-            <p className="text-xs font-mono text-accent-neon uppercase tracking-widest mb-1">
-              $ man 1 pankhil
-            </p>
+            <p className="text-xs font-mono text-accent-neon uppercase tracking-widest mb-1">$ man 1 pankhil</p>
             <div className="flex items-center gap-4">
               <h2 className="font-mono text-2xl sm:text-3xl font-bold text-foreground">
                 <span className="text-accent-cyber">01 //</span> ABOUT
@@ -36,7 +52,7 @@ const About = () => {
           </div>
 
           {/* 3 Metadata Info Tiles */}
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
             <div className="unix-window p-4 flex items-center gap-3 hover:border-accent-cyber transition-colors">
               <MapPin className="h-4 w-4 text-accent-cyber shrink-0" />
               <div className="min-w-0">
@@ -48,7 +64,7 @@ const About = () => {
             <div className="unix-window p-4 flex items-center gap-3 hover:border-accent-cyber transition-colors">
               <Building className="h-4 w-4 text-accent-cyber shrink-0" />
               <div className="min-w-0">
-                <p className="text-[11px] font-mono text-muted-foreground uppercase">AFFILIATION</p>
+                <p className="text-[11px] font-mono text-muted-foreground uppercase">INSTITUTION</p>
                 <p className="text-sm font-mono text-foreground truncate">Helmholtz Munich &amp; TUM</p>
               </div>
             </div>
@@ -75,6 +91,36 @@ const About = () => {
               >
                 {copied ? <Check className="h-3.5 w-3.5 text-accent-cyber" /> : <Copy className="h-3.5 w-3.5" />}
               </button>
+            </div>
+          </div>
+
+          {/* Research Network Affiliations (ELLIS, MCML, ELIZA) */}
+          <div className="unix-window mb-8">
+            <div className="unix-titlebar">
+              <div className="flex items-center gap-2">
+                <Network className="h-4 w-4 text-accent-neon" />
+                <span className="text-foreground">~/affiliations.conf</span>
+              </div>
+              <span className="text-accent-cyber">[ELLIS · MCML · ELIZA]</span>
+            </div>
+            <div className="p-4 grid sm:grid-cols-3 gap-3">
+              {RESEARCH_AFFILIATIONS.map((aff) => (
+                <a
+                  key={aff.code}
+                  href={aff.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group p-3 bg-background/70 border border-border hover:border-accent-cyber transition-colors block"
+                >
+                  <div className="flex items-center justify-between gap-2 mb-1">
+                    <span className="text-sm font-mono font-bold text-accent-cyber group-hover:text-accent-neon transition-colors">
+                      [{aff.code}]
+                    </span>
+                    <ExternalLink className="h-3.5 w-3.5 text-muted-foreground group-hover:text-accent-cyber transition-colors" />
+                  </div>
+                  <p className="text-xs font-mono text-muted-foreground leading-snug">{aff.name}</p>
+                </a>
+              ))}
             </div>
           </div>
 
@@ -109,7 +155,9 @@ const About = () => {
                   <span className="text-foreground font-semibold">
                     TUM School of Computation, Information and Technology
                   </span>{" "}
-                  under the supervision of{" "}
+                  (affiliated with <span className="text-accent-cyber font-semibold">ELLIS</span>,{" "}
+                  <span className="text-accent-cyber font-semibold">MCML</span>, and{" "}
+                  <span className="text-accent-cyber font-semibold">ELIZA</span>) under the supervision of{" "}
                   <a
                     href="https://scholar.google.com/citations?user=hltmGf0AAAAJ&hl=en"
                     target="_blank"

@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button";
 const NAV_ITEMS = [
   { id: "about", index: "01", label: "about" },
   { id: "publications", index: "02", label: "publications" },
-  { id: "cv", index: "03", label: "cv" },
+  { id: "talks", index: "03", label: "talks" },
+  { id: "cv", index: "04", label: "cv" },
 ];
 
 const Header = () => {

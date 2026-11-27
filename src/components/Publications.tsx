@@ -7,6 +7,7 @@ type Publication = {
   title: string;
   authors: string;
   venue: string;
+  venueBadge: string;
   year: string;
   description: string;
   links: PubLink[];
@@ -15,8 +16,9 @@ type Publication = {
 const publications: Publication[] = [
   {
     title: "A Closed Form Depth-Width Law for Neural Collapse in Deep Linear Networks",
-    authors: "Pankhil Gawade, K. Fischer, Guy Wolf, et al.",
-    venue: "arXiv preprint",
+    authors: "Pankhil Gawade, Kirsten Fischer, Guy Wolf, Ewa Szczurek",
+    venue: "NeurIPS 2026 — AXIOM: Foundations of Efficient Deep Learning Workshop",
+    venueBadge: "NeurIPS 2026 Workshop",
     year: "2026",
     description:
       "Derives, in closed form, how depth and width shape representation geometry via neural collapse (NC1–NC3) in deep linear networks — a representation-level scaling law in the depth-to-width ratio L/N.",
@@ -31,6 +33,7 @@ const publications: Publication[] = [
     title: "Scalable and Interpretable Representation Alignment with Ordinal Similarity",
     authors: "Diogo Soares, Pankhil Gawade, Andrea Dittadi, Ewa Szczurek",
     venue: "International Conference on Machine Learning (ICML)",
+    venueBadge: "ICML 2026",
     year: "2026",
     description:
       "An ordinal-similarity framework (Triplet & Quadruplet Similarity Indices) for measuring representation alignment that is interpretable, robust to outliers, and computationally efficient.",
@@ -42,8 +45,9 @@ const publications: Publication[] = [
   {
     title: "Sample Efficient Generative Molecular Optimization with Joint Self-Improvement",
     authors:
-      "Serra Korkmaz, Adam Izdebski, Jonathan Pirnay, Rasmus Møller-Larsen, Michal Kmicikiewicz, Pankhil Gawade, Dominik G. Grimm, Ewa Szczurek",
-    venue: "arXiv preprint",
+      "Serra Korkmaz, Adam Izdebski, Jonathan Pirnay, Rasmus Møller-Larsen, Michal Kmicikiewicz, Pankhil Gawade, Maksim Pavlov, Dominik G. Grimm, Ewa Szczurek",
+    venue: "Conference on Neural Information Processing Systems (NeurIPS) • ICLR 2026 AI4MAT Workshop",
+    venueBadge: "NeurIPS 2026",
     year: "2026",
     description:
       "Joint Self-Improvement: a joint generative-predictive model with self-improving sampling that outperforms state-of-the-art molecular optimization under limited evaluation budgets.",
@@ -54,6 +58,7 @@ const publications: Publication[] = [
     authors:
       "Adam Izdebski, Jan Olszewski, Pankhil Gawade, Krzysztof Koras, Serra Korkmaz, Valentin Rauscher, Jakub M. Tomczak, Ewa Szczurek",
     venue: "Transactions on Machine Learning Research (TMLR)",
+    venueBadge: "TMLR 2026",
     year: "2026",
     description:
       "Hyformer: a joint transformer for generation + property prediction with strong conditional sampling and OOD prediction; includes an antimicrobial peptide design case study.",
@@ -65,24 +70,30 @@ const publications: Publication[] = [
   },
   {
     title:
-      "Freeze, Diffuse, Decode: Geometry-Aware Adaptation of Pretrained Transformer Embeddings for Antimicrobial Peptide Design",
+      "Freeze, Diffuse, Decode: Task-Aware Adaptation of Transformer Embeddings for Antimicrobial Peptide Design",
     authors:
-      "Pankhil Gawade, Adam Izdebski, Myriam Lizotte, Kevin R. Moon, Jake S. Rhodes, Guy Wolf, Ewa Szczurek",
-    venue: "arXiv preprint",
-    year: "2025",
+      "Pankhil Gawade, Adam Izdebski, Myriam Lizotte, Kevin R. Moon, Jake Slater Rhodes, Guy Wolf, Ewa Szczurek",
+    venue: "2nd Conference on Topology, Algebra, and Geometry in Data Science (TAG-DS), PMLR Vol. 334",
+    venueBadge: "TAG-DS / PMLR 2026",
+    year: "2026",
     description:
       "A geometry-aware framework to adapt frozen pretrained embeddings to downstream AMP design by propagating supervision along the intrinsic manifold.",
-    links: [{ label: "arXiv", url: "https://arxiv.org/abs/2511.23120" }],
+    links: [
+      { label: "PMLR", url: "https://proceedings.mlr.press/v334/gawade26a.html" },
+      { label: "arXiv", url: "https://arxiv.org/abs/2511.23120" },
+    ],
   },
   {
-    title: "seqme: a Python library for evaluating biological sequence design",
+    title: "seqme: a Python library for evaluating biological sequence design from generative models",
     authors:
       "Rasmus Møller-Larsen, Adam Izdebski, Jan Olszewski, Pankhil Gawade, Michal Kmicikiewicz, Wojciech Zarzecki, Ewa Szczurek",
-    venue: "arXiv preprint",
-    year: "2025",
+    venue: "Bioinformatics Advances (Oxford University Press), Vol. 6, Issue 1",
+    venueBadge: "Bioinformatics Advances 2026",
+    year: "2026",
     description:
       "A modular, model-agnostic evaluation library covering sequence-, embedding-, and property-based metrics for biological sequence design (DNA/RNA/peptides/proteins/small molecules).",
     links: [
+      { label: "DOI", url: "https://doi.org/10.1093/bioadv/vbag212" },
       { label: "arXiv", url: "https://arxiv.org/abs/2511.04239" },
       { label: "Code", url: "https://github.com/szczurek-lab/seqme" },
     ],
@@ -110,7 +121,7 @@ const Publications = () => {
           {/* Section Header */}
           <div className="mb-10">
             <p className="text-xs font-mono text-accent-neon uppercase tracking-widest mb-1">
-              $ ls -lt ~/publications/ # {publications.length} entries
+              $ ls -lt ~/publications/ # {publications.length} peer-reviewed papers
             </p>
             <div className="flex items-center gap-4">
               <h2 className="font-mono text-2xl sm:text-3xl font-bold text-foreground">
@@ -123,38 +134,40 @@ const Publications = () => {
           <div className="space-y-6">
             {publications.map((pub, idx) => {
               const isFirstAuthor = pub.authors.startsWith("Pankhil Gawade");
-              const isPeerReviewed = !pub.venue.toLowerCase().includes("preprint");
               const entryIndex = String(idx + 1).padStart(2, "0");
 
               return (
                 <article
                   key={pub.title}
-                  className={`${
-                    isPeerReviewed ? "unix-window-amber" : "unix-window"
-                  } transition-colors hover:border-accent-cyber`}
+                  className="unix-window-amber transition-colors hover:border-accent-cyber"
                 >
                   {/* Record top bar */}
                   <div className="unix-titlebar flex-wrap">
                     <div className="flex items-center gap-2 min-w-0">
                       <BookOpen className="h-3.5 w-3.5 text-accent-cyber shrink-0" />
                       <span className="text-accent-cyber font-bold">[{entryIndex}]</span>
-                      <span
-                        className={`text-xs font-mono ${
-                          isPeerReviewed ? "text-accent-neon font-semibold" : "text-muted-foreground"
-                        }`}
-                      >
-                        {pub.venue} ({pub.year})
+                      <span className="text-xs font-mono text-accent-neon font-semibold">
+                        {pub.venueBadge}
                       </span>
                     </div>
-                    {isFirstAuthor && (
-                      <span className="px-2 py-0.5 bg-accent-cyber/15 border border-accent-cyber/60 text-accent-cyber text-[11px] font-mono font-semibold">
-                        1ST_AUTHOR
+                    <div className="flex items-center gap-2">
+                      {isFirstAuthor && (
+                        <span className="px-2 py-0.5 bg-accent-cyber/15 border border-accent-cyber/60 text-accent-cyber text-[11px] font-mono font-semibold">
+                          1ST_AUTHOR
+                        </span>
+                      )}
+                      <span className="px-2 py-0.5 bg-accent-neon/10 border border-accent-neon/40 text-accent-neon text-[11px] font-mono">
+                        PUBLISHED
                       </span>
-                    )}
+                    </div>
                   </div>
 
                   <div className="p-5 sm:p-6">
                     <h3 className="text-base sm:text-lg font-bold text-foreground leading-snug">{pub.title}</h3>
+
+                    <p className="text-xs font-mono text-muted-foreground mt-1.5">
+                      {pub.venue} ({pub.year})
+                    </p>
 
                     <p className="text-xs sm:text-sm text-accent-cyber/90 font-mono mt-3 leading-relaxed">
                       {renderAuthors(pub.authors)}
