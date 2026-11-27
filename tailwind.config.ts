@@ -7,16 +7,17 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "1.5rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1280px",
       },
     },
     extend: {
       fontFamily: {
-        sans: ["Space Grotesk", "system-ui", "sans-serif"],
-        display: ["Space Grotesk", "system-ui", "sans-serif"],
-        mono: ["JetBrains Mono", "monospace"],
+        sans: ["IBM Plex Mono", "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "monospace"],
+        display: ["IBM Plex Mono", "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "monospace"],
+        retro: ["VT323", "IBM Plex Mono", "monospace"],
+        mono: ["IBM Plex Mono", "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "monospace"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -69,8 +70,8 @@ export default {
       },
       borderRadius: {
         lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        md: "var(--radius)",
+        sm: "var(--radius)",
       },
       keyframes: {
         "accordion-down": {

@@ -89,66 +89,97 @@ const publications: Publication[] = [
   },
 ];
 
+const renderAuthors = (authors: string) => {
+  const parts = authors.split(/(Pankhil Gawade)/g);
+  return parts.map((part, idx) =>
+    part === "Pankhil Gawade" ? (
+      <strong key={idx} className="text-foreground underline decoration-accent-cyber underline-offset-4 font-bold">
+        {part}
+      </strong>
+    ) : (
+      <span key={idx}>{part}</span>
+    ),
+  );
+};
+
 const Publications = () => {
   return (
-    <section id="publications" className="py-24 bg-card/30">
-      <div className="container mx-auto px-6">
+    <section id="publications" className="py-20 border-t border-border/60 bg-background/60">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-display text-4xl font-bold text-foreground mb-2 text-center">
-            <span className="text-accent-cyber font-mono">{"<"}</span>
-            Publications
-            <span className="text-accent-cyber font-mono">{" />"}</span>
-          </h2>
-          <p className="text-muted-foreground text-center mb-12 font-mono text-sm">
-            // research publications & preprints
-          </p>
+          {/* Section Header */}
+          <div className="mb-10">
+            <p className="text-xs font-mono text-accent-neon uppercase tracking-widest mb-1">
+              $ ls -lt ~/publications/ # {publications.length} entries
+            </p>
+            <div className="flex items-center gap-4">
+              <h2 className="font-mono text-2xl sm:text-3xl font-bold text-foreground">
+                <span className="text-accent-cyber">02 //</span> PUBLICATIONS
+              </h2>
+              <div className="flex-1 h-px bg-border" aria-hidden="true" />
+            </div>
+          </div>
 
           <div className="space-y-6">
-            {publications.map((pub) => (
-              <div
-                key={pub.title}
-                className="group p-6 bg-card/50 rounded-lg border border-border hover:border-accent-cyber/50 transition-all duration-300 hover:shadow-[0_0_30px_hsl(160_100%_50%/0.1)] backdrop-blur-sm"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-accent-cyber/10 rounded-lg border border-accent-cyber/30 group-hover:bg-accent-cyber/20 transition-colors">
-                    <BookOpen className="h-5 w-5 text-accent-cyber" />
+            {publications.map((pub, idx) => {
+              const isFirstAuthor = pub.authors.startsWith("Pankhil Gawade");
+              const isPeerReviewed = !pub.venue.toLowerCase().includes("preprint");
+              const entryIndex = String(idx + 1).padStart(2, "0");
+
+              return (
+                <article
+                  key={pub.title}
+                  className={`${
+                    isPeerReviewed ? "unix-window-amber" : "unix-window"
+                  } transition-colors hover:border-accent-cyber`}
+                >
+                  {/* Record top bar */}
+                  <div className="unix-titlebar flex-wrap">
+                    <div className="flex items-center gap-2 min-w-0">
+                      <BookOpen className="h-3.5 w-3.5 text-accent-cyber shrink-0" />
+                      <span className="text-accent-cyber font-bold">[{entryIndex}]</span>
+                      <span
+                        className={`text-xs font-mono ${
+                          isPeerReviewed ? "text-accent-neon font-semibold" : "text-muted-foreground"
+                        }`}
+                      >
+                        {pub.venue} ({pub.year})
+                      </span>
+                    </div>
+                    {isFirstAuthor && (
+                      <span className="px-2 py-0.5 bg-accent-cyber/15 border border-accent-cyber/60 text-accent-cyber text-[11px] font-mono font-semibold">
+                        1ST_AUTHOR
+                      </span>
+                    )}
                   </div>
 
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-foreground leading-snug">
-                      {pub.title}
-                    </h3>
+                  <div className="p-5 sm:p-6">
+                    <h3 className="text-base sm:text-lg font-bold text-foreground leading-snug">{pub.title}</h3>
 
-                    <p className="text-sm text-muted-foreground mt-1">
-                      {pub.venue} • {pub.year}
+                    <p className="text-xs sm:text-sm text-accent-cyber/90 font-mono mt-3 leading-relaxed">
+                      {renderAuthors(pub.authors)}
                     </p>
 
-                    <p className="text-sm text-accent-cyber font-mono mt-3">
-                      {pub.authors}
-                    </p>
+                    <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{pub.description}</p>
 
-                    <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
-                      {pub.description}
-                    </p>
-
-                    <div className="flex flex-wrap gap-2 mt-4">
+                    <div className="flex flex-wrap gap-2 mt-5">
                       {pub.links.map((l) => (
                         <Button key={l.url} variant="social" size="sm" asChild>
                           <a href={l.url} target="_blank" rel="noopener noreferrer">
-                            <ExternalLink className="h-4 w-4" />
-                            {l.label}
+                            <ExternalLink className="h-3.5 w-3.5" />
+                            [{l.label}]
                           </a>
                         </Button>
                       ))}
                     </div>
                   </div>
-                </div>
-              </div>
-            ))}
+                </article>
+              );
+            })}
           </div>
 
-          <div className="mt-8 text-center">
-            <Button variant="outline" asChild>
+          <div className="mt-10 text-center">
+            <Button variant="outline" size="lg" asChild>
               <a
                 href="https://scholar.google.com/citations?user=e2kHnzsAAAAJ&hl=en"
                 target="_blank"
